@@ -1,89 +1,185 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Faculty of Agriculture Research Core Facilities - Resource hub for ICP, MS, Microscopy, and Materials Analysis.">
-    <meta name="keywords" content="Microscopy, ICP, Mass Spectrometry, FTIR, Materials Testing, Software, Tools, Guides, Community">
+    <meta name="description" content="Faculty of Agriculture Research Core Facilities, The Hebrew University of Jerusalem: microscopy, plasma spectrochemistry (ICP-OES / ICP-MS), mass spectrometry and bio-materials analysis for researchers, students and external clients.">
     <meta name="author" content="Faculty of Agriculture Research Core Facilities">
-    <title>Faculty of Agriculture CSI Microscopy</title>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#0A716E">
+    <title>Faculty of Agriculture Research Core Facilities</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <script>
+        try { var t = localStorage.getItem('csi-theme'); if (t === 'dark' || t === 'light') document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <button class="theme-toggle" id="theme-toggle"><i class="fa-solid fa-circle-half-stroke"></i></button>
-        <a href="#home"><i class="fa-solid fa-house"></i> <span class="text">Home</span></a>
-        <a href="#Microscopy"><i class="fa-solid fa-graduation-cap"></i> <span class="text">Microscopy</span></a>
-        <a href="#ICP"><i class="fa-solid fa-laptop-code"></i> <span class="text">ICP</span></a>
-        <a href="#MassSpectrometry"><i class="fa-solid fa-book"></i> <span class="text">Mass Spectrometry</span></a>
-        <a href="#BioMaterials"><i class="fa-solid fa-database"></i> <span class="text">Bio-Materials Analysis</span></a>
-        <a href="#Forms"><i class="fa-solid fa-code-branch"></i> <span class="text">Contributing</span></a>
-        <a href="#Contact"><i class="fa-solid fa-envelope"></i> <span class="text">Contact</span></a>
-        <button id="collapse-toggle"><i class="fa-solid fa-angles-left toggle-icon"></i></button>
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true">RCF</span>
+            <span class="brand-text">Research Core Facilities <small>Faculty of Agriculture · HUJI</small></span>
+        </a>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i></button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+        <div class="nav-links" id="nav-links">
+            <a href="#facilities"><i class="fa-solid fa-flask" aria-hidden="true"></i> <span class="text">Facilities</span></a>
+            <a href="icp.html"><i class="fa-solid fa-fire" aria-hidden="true"></i> <span class="text">ICP lab</span></a>
+            <a href="https://csi-microscopy.github.io/" target="_blank" rel="noopener"><i class="fa-solid fa-microscope" aria-hidden="true"></i> <span class="text">Microscopy</span></a>
+            <a href="#contributing"><i class="fa-solid fa-code-branch" aria-hidden="true"></i> <span class="text">Contributing</span></a>
+            <a href="#contact"><i class="fa-solid fa-envelope" aria-hidden="true"></i> <span class="text">Contact</span></a>
+        </div>
     </nav>
 
     <main>
-        <section id="home">
-            <h1>Faculty of Agriculture Research Core Facilities</h1>
-            <p>Welcome to the <strong>Faculty of Agriculture Research Core Facilities.</strong> Explore our instruments, services, guides, and tutorials.</p>
-        </section>
-
-        <section id="Microscopy">
-            <h2>Microscopy</h2>
-            <p>Discover our state-of-the-art microscopy services and image analysis tools.</p>
-        </section>
-
-        <section id="ICP">
-            <h2>Inductively Coupled Plasma (ICP) Analysis</h2>
-            <p>Our laboratory is equipped with cutting-edge ICP instruments for elemental analysis:</p>
-            <ul>
-                <li><strong>ICP-OES (PlasmaQuant 9000 Elite)</strong> - Ideal for multi-element analysis with high sensitivity.</li>
-                <li><strong>ICP-MS (PlasmaQuant MS Elite)</strong> - Ultra-sensitive detection for trace element analysis.</li>
+        <section id="home" class="hero">
+            <div>
+                <span class="eyebrow">Scientific Service Core Facility · Rehovot campus</span>
+                <h1>Faculty of Agriculture Research Core Facilities</h1>
+                <p class="lead">Shared instruments and expert staff for researchers and students of the Faculty of Agriculture, Food and Environment, the Volcani Center, other institutions and industry. Find the facility you need, learn how to submit samples, and contact the people who run it.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#facilities"><i class="fa-solid fa-flask" aria-hidden="true"></i> Browse facilities</a>
+                    <a class="btn" href="icp.html#submit"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Submit samples to the ICP lab</a>
+                </div>
+            </div>
+            <ul class="quick-links" aria-label="Quick links">
+                <li>
+                    <a href="https://csi-microscopy.github.io/" target="_blank" rel="noopener">
+                        <span class="ql-icon"><i class="fa-solid fa-microscope" aria-hidden="true"></i></span>
+                        <span><span class="ql-title">CSI Microscopy</span><span class="ql-desc">Guides, booking and learning material</span></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square ql-arrow" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="icp.html">
+                        <span class="ql-icon"><i class="fa-solid fa-fire" aria-hidden="true"></i></span>
+                        <span><span class="ql-title">Plasma Spectrochemistry (ICP) lab</span><span class="ql-desc">Elemental analysis of soil, water, plants and more</span></span>
+                        <i class="fa-solid fa-arrow-right ql-arrow" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="assets/icp/sample-submission-form.pdf" target="_blank" rel="noopener">
+                        <span class="ql-icon"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></span>
+                        <span><span class="ql-title">ICP sample submission form</span><span class="ql-desc">Required with every sample (PDF)</span></span>
+                        <i class="fa-solid fa-arrow-up-right-from-square ql-arrow" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="icp.html#faq">
+                        <span class="ql-icon"><i class="fa-solid fa-circle-question" aria-hidden="true"></i></span>
+                        <span><span class="ql-title">How to prepare and send samples</span><span class="ql-desc">Amounts, storage, delivery address and map</span></span>
+                        <i class="fa-solid fa-arrow-right ql-arrow" aria-hidden="true"></i>
+                    </a>
+                </li>
             </ul>
-            <p>These instruments allow precise and reliable elemental composition determination across various sample types.</p>
         </section>
 
-        <section id="MassSpectrometry">
-            <h2>Mass Spectrometry</h2>
-            <p>Learn about our advanced mass spectrometry techniques for detailed molecular analysis.</p>
+        <section id="facilities">
+            <div class="section-head">
+                <span class="eyebrow">Facilities</span>
+                <h2>What we offer, in plain language</h2>
+                <p>Each facility has its own staff, instruments and way of working. Pick the one that matches your question, then follow its page for the details.</p>
+            </div>
+            <ul class="instruments">
+                <li>
+                    <span class="i-icon"><i class="fa-solid fa-microscope" aria-hidden="true"></i></span>
+                    <div>
+                        <h3>Microscopy <small>CSI · LIGHT, ELECTRON AND X-RAY</small></h3>
+                        <p>See the structure of your sample, from whole organs and seeds down to organelles and nanometre-scale surfaces. Widefield and confocal fluorescence, STED super-resolution, light sheet, micro-CT and scanning electron microscopes, with image analysis support and training for every user.</p>
+                        <div class="i-good"><span>fluorescence imaging</span><span>3D imaging</span><span>micro-CT</span><span>SEM</span><span>image analysis</span></div>
+                        <div class="i-links"><a href="https://csi-microscopy.github.io/" target="_blank" rel="noopener">CSI Microscopy site</a><a href="https://csi-microscopy.github.io/basics.html" target="_blank" rel="noopener">Microscopy basics for new users</a><a href="https://bookit-prod.cc.huji.ac.il/Weekly.aspx" target="_blank" rel="noopener">Book an instrument</a></div>
+                    </div>
+                </li>
+                <li>
+                    <span class="facility-photo"><img src="assets/icp/icp-oes.png" alt=""></span>
+                    <div>
+                        <h3>Plasma Spectrochemistry <small>ICP-OES · ICP-MS · ELEMENTAL ANALYSIS</small></h3>
+                        <p>Find out which elements your sample contains and how much of each: metals and most non-metals, from major components down to parts per trillion. Soil, water, plant material, food, biological tissue, metals, polymers and pharmaceuticals, with sample digestion done in the lab. Samples are submitted with a form; no booking needed.</p>
+                        <div class="i-good"><span>trace elements</span><span>heavy metals</span><span>nutrients in soil and plants</span><span>water quality</span><span>alloy impurities</span></div>
+                        <div class="i-links"><a href="icp.html">ICP lab page</a><a href="icp.html#submit">Submit samples</a><a href="icp.html#faq">FAQ</a></div>
+                    </div>
+                </li>
+                <li>
+                    <span class="i-icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></span>
+                    <div>
+                        <h3>Mass Spectrometry <small>MOLECULAR ANALYSIS</small></h3>
+                        <p>Identify and quantify molecules, from small metabolites to proteins, by their mass. Page in preparation; contact us for current capabilities.</p>
+                        <span class="badge badge-soon">Page coming soon</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="i-icon"><i class="fa-solid fa-cubes" aria-hidden="true"></i></span>
+                    <div>
+                        <h3>Bio-Materials Analysis and Testing <small>MATERIALS CHARACTERISATION</small></h3>
+                        <p>Physical and chemical characterisation of biological and bio-based materials for research and industry. Page in preparation; contact us for current capabilities.</p>
+                        <span class="badge badge-soon">Page coming soon</span>
+                    </div>
+                </li>
+            </ul>
         </section>
 
-        <section id="BioMaterials">
-            <h2>Bio-Materials Analysis and Testing</h2>
-            <p>Explore our comprehensive bio-materials analysis services for research and industry.</p>
+        <section id="contributing" class="prose">
+            <div class="section-head">
+                <span class="eyebrow">Contributing</span>
+                <h2>Help us improve these pages</h2>
+            </div>
+            <p>Found a mistake, or have a guide, protocol or tool that would help other users? Open an issue or pull request on <a href="https://github.com/Daniel-Waiger/agri-rcf.github.io" target="_blank" rel="noopener">GitHub</a>, or email the facility concerned.</p>
         </section>
 
-        <section id="Forms">
-            <h2>Contributing</h2>
-            <p>We welcome contributions! Share your tutorials, guides, and tools to help expand our resource hub.</p>
-        </section>
-
-        <section id="Contact">
-            <h2>Contact</h2>
-            <p>For inquiries and support, reach out to our team:</p>
-            <ul>
-                <li><a href="mailto:core.csi@mail.huji.ac.il">Core CSI Email</a></li>
-                <li><a href="mailto:einat.zelinger@mail.huji.ac.il">Einat Zelinger - Head of Unit</a></li>
-                <li><a href="mailto:tally.kossovsky@mail.huji.ac.il">Tally Kossovsky - Electron Microscopy and MicroCT</a></li>
-                <li><a href="mailto:danielw@savion.huji.ac.il">Daniel Waiger - Light Microscopy and Image Analysis</a></li>
+        <section id="contact">
+            <div class="section-head">
+                <span class="eyebrow">Contact</span>
+                <h2>Who to write to</h2>
+                <p>Write directly to the facility you need. Each has its own staff.</p>
+            </div>
+            <h3 class="subhead">Plasma Spectrochemistry (ICP) laboratory</h3>
+            <ul class="contact-list">
+                <li><a href="mailto:vasiliyr@savion.huji.ac.il">
+                    <span class="c-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                    <span><span class="c-name">Vasiliy Rosen, Ph.D.</span><span class="c-role">ICP lab manager · 08-948-99-75</span><span class="c-mail">vasiliyr@savion.huji.ac.il</span></span></a></li>
+                <li><a href="mailto:Yuliana.Andrushchenko@mail.huji.ac.il">
+                    <span class="c-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                    <span><span class="c-name">Yuliana Andrushchenko, M.Sc.</span><span class="c-role">Laboratory engineer</span><span class="c-mail">Yuliana.Andrushchenko@mail.huji.ac.il</span></span></a></li>
+                <li><a href="mailto:shoshis@savion.huji.ac.il">
+                    <span class="c-icon"><i class="fa-solid fa-box" aria-hidden="true"></i></span>
+                    <span><span class="c-name">Shoshi Shalom</span><span class="c-role">Administrative officer, sample delivery · 08-948-91-52</span><span class="c-mail">shoshis@savion.huji.ac.il</span></span></a></li>
+                <li><a href="mailto:oritg@savion.huji.ac.il">
+                    <span class="c-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                    <span><span class="c-name">Orit Gal Garber, Ph.D.</span><span class="c-role">Department director · 08-948-92-25</span><span class="c-mail">oritg@savion.huji.ac.il</span></span></a></li>
+            </ul>
+            <h3 class="subhead">CSI Microscopy</h3>
+            <ul class="contact-list">
+                <li><a href="mailto:core.csi@mail.huji.ac.il">
+                    <span class="c-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                    <span><span class="c-name">CSI Unit</span><span class="c-role">General enquiries</span><span class="c-mail">core.csi@mail.huji.ac.il</span></span></a></li>
+                <li><a href="mailto:einat.zelinger@mail.huji.ac.il">
+                    <span class="c-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                    <span><span class="c-name">Einat Zelinger</span><span class="c-role">Head of Unit</span><span class="c-mail">einat.zelinger@mail.huji.ac.il</span></span></a></li>
+                <li><a href="mailto:tally.kossovsky@mail.huji.ac.il">
+                    <span class="c-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                    <span><span class="c-name">Tally Kossovsky</span><span class="c-role">Electron Microscopy and MicroCT</span><span class="c-mail">tally.kossovsky@mail.huji.ac.il</span></span></a></li>
+                <li><a href="mailto:danielw@savion.huji.ac.il">
+                    <span class="c-icon"><i class="fa-solid fa-user" aria-hidden="true"></i></span>
+                    <span><span class="c-name">Daniel Waiger</span><span class="c-role">Light Microscopy and Image Analysis</span><span class="c-mail">danielw@savion.huji.ac.il</span></span></a></li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Faculty of Agriculture CSI Microscopy</p>
+        <div class="footer-inner">
+            <p>&copy; 2025 Faculty of Agriculture Research Core Facilities · The Hebrew University of Jerusalem</p>
+            <nav aria-label="Footer">
+                <a href="https://csi-microscopy.github.io/" target="_blank" rel="noopener">CSI Microscopy</a>
+                <a href="icp.html">ICP lab</a>
+                <a href="index.html#contact">Contact</a>
+            </nav>
+        </div>
     </footer>
 
-    <script>
-        document.querySelectorAll('.navbar a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="site.js"></script>
 </body>
 </html>
